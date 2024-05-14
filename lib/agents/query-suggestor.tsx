@@ -16,7 +16,7 @@ export async function querySuggestor(
   })
   const objectStream = createStreamableValue<PartialRelated>()
   uiStream.append(
-    <Section title="Related" separator={true}>
+    <Section title="Related 相关问题" separator={true}>
       <SearchRelated relatedQueries={objectStream.value} />
     </Section>
   )

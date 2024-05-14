@@ -32,7 +32,7 @@ export default function WeixinShare({
     const wxjs: typeof import('weixin-js-sdk-ts')['default'] = require('weixin-js-sdk')
 
     wxjs.config({
-      debug: true,
+      debug: false,
       appId,
       timestamp: signObject['timestamp'],
       nonceStr: signObject['noncestr'],

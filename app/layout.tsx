@@ -8,7 +8,6 @@ import Footer from '@/components/footer'
 import { Sidebar } from '@/components/sidebar'
 import { Toaster } from '@/components/ui/sonner'
 import WeixinShareWrapper from '@/components/weixin-share-wrapper'
-import { headers } from 'next/headers'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -57,16 +56,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const headersList = headers()
-  const domain = headersList.get('host') || ''
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn('font-sans antialiased', fontSans.variable)}>
         <WeixinShareWrapper
-          url={domain}
+          url={'https://demo.txz.tech'}
           title={title}
           desc={description}
-          imgUrl={domain + '/opengraph-image.png'}
+          imgUrl={'https://demo.txz.tech/opengraph-image.png'}
         />
         <ThemeProvider
           attribute="class"

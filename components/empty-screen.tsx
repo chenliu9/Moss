@@ -3,8 +3,8 @@ import { ArrowRight } from 'lucide-react'
 
 const exampleMessages = [
   {
-    heading: "What's new with the iPad Pro?",
-    message: "What's new with the iPad Pro?"
+    heading: 'GPT-4o的特点包括哪些?',
+    message: 'GPT-4o的特点包括哪些?'
   },
   {
     heading: '国有企业转让资产，交易价款是否允许分期支付？',

@@ -23,14 +23,14 @@ export function SearchSection({ result }: SearchSectionProps) {
             <ToolBadge tool="search">{`${searchResults.query}`}</ToolBadge>
           </Section>
           {searchResults.images && searchResults.images.length > 0 && (
-            <Section title="Images">
+            <Section title="Images 图片">
               <SearchResultsImageSection
                 images={searchResults.images}
                 query={searchResults.query}
               />
             </Section>
           )}
-          <Section title="Sources">
+          <Section title="Sources 来源">
             <SearchResults results={searchResults.results} />
           </Section>
         </>

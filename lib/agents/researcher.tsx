@@ -19,7 +19,7 @@ export async function researcher(
   let fullResponse = ''
   let hasError = false
   const answerSection = (
-    <Section title="Answer">
+    <Section title="Answer 答案">
       <BotMessage content={streamText.value} />
     </Section>
   )

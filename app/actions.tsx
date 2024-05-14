@@ -350,7 +350,7 @@ export const getUIStateFromAIState = (aiState: Chat) => {
               return {
                 id,
                 component: (
-                  <Section title="回复">
+                  <Section title="Answer 回复">
                     <BotMessage content={answer.value} />
                   </Section>
                 )
@@ -361,7 +361,7 @@ export const getUIStateFromAIState = (aiState: Chat) => {
               return {
                 id,
                 component: (
-                  <Section title="Related" separator={true}>
+                  <Section title="Related 相关问题" separator={true}>
                     <SearchRelated relatedQueries={relatedQueries.value} />
                   </Section>
                 )

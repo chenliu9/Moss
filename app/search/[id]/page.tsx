@@ -66,7 +66,6 @@ export default async function SearchPage({ params }: SearchPageProps) {
           'Moss - 动态、复杂、高维数据的智能分析'
         }
         desc={
-          chat?.messages[0].content ||
           '基于先进的数据+AI一体化引擎，赋能企业对运营生产动态的实时监控与掌握，实现生产经营的降本增益！'
         }
         imgUrl={'https://demo.txz.tech/opengraph-image.png'}

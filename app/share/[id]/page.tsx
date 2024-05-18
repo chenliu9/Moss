@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: SharePageProps) {
 
   const title =
     chat.title.toString().slice(0, 50) ||
-    'Moss - Unleash the Power of Data and AI'
+    'InsightAI - Unleash the Power of Data and AI'
 
   const answer = chat?.messages.find(message => message.type === 'answer')
   const description =
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: SharePageProps) {
           url: `/opengraph-image.png`, // Must be an absolute URL
           width: 512,
           height: 512,
-          alt: 'Moss'
+          alt: 'InsightAI'
         }
       ]
     }
@@ -69,7 +69,7 @@ export default async function SharePage({ params }: SharePageProps) {
         url={'https://demo.txz.tech/share/' + params.id}
         title={
           chat?.title.toString().slice(0, 50) ||
-          'Moss - Unleash the Power of Data and AI'
+          'InsightAI - Unleash the Power of Data and AI'
         }
         desc={description}
         imgUrl={'https://demo.txz.tech/opengraph-image.png'}

@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: SearchPageProps) {
   const chat = await getChat(params.id, 'anonymous')
   const title =
     chat?.title.toString().slice(0, 50) ||
-    'Moss - Unleash the Power of Data and AI'
+    'InsightAI - Unleash the Power of Data and AI'
   const answer = chat?.messages.find(message => message.type === 'answer')
   const description =
     answer?.content ||
@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: SearchPageProps) {
           url: `/opengraph-image.png`, // Must be an absolute URL
           width: 512,
           height: 512,
-          alt: 'Moss'
+          alt: 'InsightAI'
         }
       ]
     }
@@ -67,7 +67,7 @@ export default async function SearchPage({ params }: SearchPageProps) {
       <WeixinShareWrapper
         url={'https://demo.txz.tech/search/' + params.id}
         title={
-          chat?.title.toString().slice(0, 50) || 'Moss - er of Data and AI'
+          chat?.title.toString().slice(0, 50) || 'InsightAI - er of Data and AI'
         }
         desc={description}
         imgUrl={'https://demo.txz.tech/opengraph-image.png'}

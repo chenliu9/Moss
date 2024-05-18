@@ -54,8 +54,11 @@ export function EmptyScreen({
                 submitMessage(message.message)
               }}
             >
-              <ArrowRight size={16} className="mr-2 text-muted-foreground" />
-              {message.heading}
+              <ArrowRight
+                size={16}
+                className="mr-2 text-muted-foreground min-w-fit"
+              />
+              <div className="text-left text-wrap">{message.heading}</div>
             </Button>
           ))}
         </div>

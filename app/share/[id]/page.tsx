@@ -21,7 +21,9 @@ export async function generateMetadata({ params }: SharePageProps) {
     chat.title.toString().slice(0, 50) ||
     'Moss - Unleash the Power of Data and AI'
 
+  const answer = chat?.messages.find(message => message.type === 'answer')
   const description =
+    answer?.content ||
     '原生态的跨行业、跨领域的大数据与大模型分析引擎，实现动态、复杂、高维数据的智能分析与汇总！'
 
   return {
@@ -46,6 +48,10 @@ export async function generateMetadata({ params }: SharePageProps) {
 
 export default async function SharePage({ params }: SharePageProps) {
   const chat = await getSharedChat(params.id)
+  const answer = chat?.messages.find(message => message.type === 'answer')
+  const description =
+    answer?.content ||
+    '原生态的跨行业、跨领域的大数据与大模型分析引擎，实现动态、复杂、高维数据的智能分析与汇总！'
 
   if (!chat || !chat.sharePath) {
     notFound()
@@ -65,9 +71,7 @@ export default async function SharePage({ params }: SharePageProps) {
           chat?.title.toString().slice(0, 50) ||
           'Moss - Unleash the Power of Data and AI'
         }
-        desc={
-          '原生态的跨行业、跨领域的大数据与大模型分析引擎，实现动态、复杂、高维数据的智能分析与汇总！'
-        }
+        desc={description}
         imgUrl={'https://demo.txz.tech/opengraph-image.png'}
       />
       <Chat id={params.id} />

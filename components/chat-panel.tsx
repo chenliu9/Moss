@@ -139,7 +139,7 @@ export function ChatPanel({ messages }: ChatPanelProps) {
                 Math.max(8, newBorder) + 'px'
             }}
             onFocus={() => setShowEmptyScreen(true)}
-            onBlur={() => setShowEmptyScreen(false)}
+            onBlur={() => setShowEmptyScreen(true)}
           />
           <Button
             type="submit"

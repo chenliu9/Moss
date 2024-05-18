@@ -8,6 +8,7 @@ import Footer from '@/components/footer'
 import { Sidebar } from '@/components/sidebar'
 import { Toaster } from '@/components/ui/sonner'
 import WeixinShareWrapper from '@/components/weixin-share-wrapper'
+import { Analytics } from '@vercel/analytics/react'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -59,6 +60,7 @@ export default function RootLayout({
           desc={description}
           imgUrl={'https://demo.txz.tech/opengraph-image.png'}
         />
+        <Analytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

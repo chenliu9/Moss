@@ -18,12 +18,13 @@ export async function generateMetadata({ params }: SharePageProps) {
   }
 
   const title =
-    chat.title.toString().slice(0, 50) || 'InsightAI - 基于数据与AI的驱动决策'
+    chat.title.toString().slice(0, 50) ||
+    'InsightAI - 数据驱动与AI赋能的分析决策'
 
   const answer = chat?.messages.find(message => message.type === 'answer')
   const description =
     answer?.content ||
-    '原生态的跨行业、跨领域的大数据与大模型分析引擎，实现动态、复杂、高维数据的智能分析与决策！'
+    '适用跨行业、跨领域的智能分析，赋能实时、动态、高维数据驱动的智能决策！'
 
   return {
     title,
@@ -50,7 +51,7 @@ export default async function SharePage({ params }: SharePageProps) {
   const answer = chat?.messages.find(message => message.type === 'answer')
   const description =
     answer?.content ||
-    '原生态的跨行业、跨领域的大数据与大模型分析引擎，实现动态、复杂、高维数据的智能分析与决策！'
+    '适用跨行业、跨领域的智能分析，赋能实时、动态、高维数据驱动的智能决策！'
 
   if (!chat || !chat.sharePath) {
     notFound()
@@ -68,7 +69,7 @@ export default async function SharePage({ params }: SharePageProps) {
         url={'https://demo.txz.tech/share/' + params.id}
         title={
           chat?.title.toString().slice(0, 50) ||
-          'InsightAI - 基于数据与AI的驱动决策'
+          'InsightAI - 数据驱动与AI赋能的分析决策'
         }
         desc={description}
         imgUrl={'https://demo.txz.tech/opengraph-image.png'}

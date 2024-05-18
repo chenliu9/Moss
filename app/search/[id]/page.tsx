@@ -15,12 +15,11 @@ export interface SearchPageProps {
 export async function generateMetadata({ params }: SearchPageProps) {
   const chat = await getChat(params.id, 'anonymous')
   const title =
-    chat?.title.toString().slice(0, 50) ||
-    'InsightAI - Unleash the Power of Data and AI'
+    chat?.title.toString().slice(0, 50) || 'InsightAI - 基于数据与AI的驱动决策'
   const answer = chat?.messages.find(message => message.type === 'answer')
   const description =
     answer?.content ||
-    '原生态的跨行业、跨领域的大数据与大模型分析引擎，实现动态、复杂、高维数据的智能分析与汇总！'
+    '原生态的跨行业、跨领域的大数据与大模型分析引擎，实现动态、复杂、高维数据的智能分析与决策！'
   return {
     title,
     description,
@@ -47,7 +46,7 @@ export default async function SearchPage({ params }: SearchPageProps) {
   const answer = chat?.messages.find(message => message.type === 'answer')
   const description =
     answer?.content ||
-    '原生态的跨行业、跨领域的大数据与大模型分析引擎，实现动态、复杂、高维数据的智能分析与汇总！'
+    '原生态的跨行业、跨领域的大数据与大模型分析引擎，实现动态、复杂、高维数据的智能分析与决策！'
 
   if (!chat) {
     redirect('/')

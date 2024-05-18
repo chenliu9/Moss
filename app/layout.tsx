@@ -14,9 +14,9 @@ const fontSans = FontSans({
   variable: '--font-sans'
 })
 
-const title = 'Moss - 动态、复杂、高维数据的智能分析'
+const title = 'Moss - Unleash the Power of Data and AI'
 const description =
-  '基于先进的数据+AI一体化引擎，赋能企业对运营生产动态的实时监控与掌握，实现生产经营的降本增益！'
+  '原生态的跨行业、跨领域的大数据与大模型分析引擎，实现动态、复杂、高维数据的智能分析与汇总！'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://demo.txz.tech'),

@@ -14,7 +14,7 @@ const fontSans = FontSans({
   variable: '--font-sans'
 })
 
-const title = 'Moss - Unleash the Power of Data and AI'
+const title = 'InsightAI - Unleash the Power of Data and AI'
 const description =
   '原生态的跨行业、跨领域的大数据与大模型分析引擎，实现动态、复杂、高维数据的智能分析与汇总！'
 
@@ -32,16 +32,10 @@ export const metadata: Metadata = {
         url: `/opengraph-image.png`, // Must be an absolute URL
         width: 512,
         height: 512,
-        alt: 'Moss'
+        alt: 'InsightAI'
       }
     ]
   }
-  // twitter: {
-  //   title,
-  //   description,
-  //   card: 'summary_large_image',
-  //   creator: '@miiura'
-  // }
 }
 
 export const viewport: Viewport = {

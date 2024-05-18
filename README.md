@@ -1,4 +1,4 @@
-# Moss
+# InsightAI
 
 An AI-powered search engine with a generative UI. Heavily inspired by [Morphic](https://github.com/miurla/morphic).
 

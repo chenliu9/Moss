@@ -15,9 +15,8 @@ const fontSans = FontSans({
   variable: '--font-sans'
 })
 
-const title = 'InsightAI - 数据驱动与AI赋能的分析决策'
-const description =
-  '适用跨行业、跨领域的智能分析，赋能实时、动态、高维数据驱动的智能决策！'
+const title = process.env.Metadata_Title || ''
+const description = process.env.Metadata_Description || ''
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://demo.txz.tech'),

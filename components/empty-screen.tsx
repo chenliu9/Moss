@@ -11,8 +11,8 @@ const exampleMessages = [
     message: '国有企业转让资产，交易价款是否允许分期支付？'
   },
   {
-    heading: '个体工商户如何享受个人所得税减半征税政策？',
-    message: '个体工商户如何享受个人所得税减半征税政策？'
+    heading: '总结：https://www.gov.cn/zhengce/2022-01/12/content_5718608.htm',
+    message: '总结：https://www.gov.cn/zhengce/2022-01/12/content_5718608.htm'
   },
   {
     heading:
@@ -23,6 +23,10 @@ const exampleMessages = [
   {
     heading: '施工方超过国家规定标准排放噪声，是否应当承担责任?',
     message: '施工方超过国家规定标准排放噪声，是否应当承担责任?'
+  },
+  {
+    heading: '总结：https://mp.weixin.qq.com/s/aikDRG4x08sI9Pg4tkyaZQ',
+    message: '总结：https://mp.weixin.qq.com/s/aikDRG4x08sI9Pg4tkyaZQ'
   }
   // {
   //   heading: '小米汽车是否值得购买?',

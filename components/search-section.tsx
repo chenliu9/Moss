@@ -30,7 +30,7 @@ export function SearchSection({ result }: SearchSectionProps) {
               />
             </Section>
           )}
-          <Section title="Results 结果来源">
+          <Section title="Sources 来源">
             <SearchResults results={searchResults.results} />
           </Section>
         </>

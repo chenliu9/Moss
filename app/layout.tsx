@@ -17,9 +17,10 @@ const fontSans = FontSans({
 
 const title = process.env.Metadata_Title || ''
 const description = process.env.Metadata_Description || ''
+const metadataBaseUrl = process.env.Metadata_URL || ''
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://demo.txz.tech'),
+  metadataBase: new URL(metadataBaseUrl),
   title,
   description,
   openGraph: {
@@ -54,10 +55,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={cn('font-sans antialiased', fontSans.variable)}>
         <WeixinShareWrapper
-          url={'https://demo.txz.tech'}
+          url={metadataBaseUrl}
           title={title}
           desc={description}
-          imgUrl={'https://demo.txz.tech/opengraph-image.png'}
+          imgUrl={`${metadataBaseUrl}/opengraph-image.png`}
         />
         <Analytics />
         <ThemeProvider

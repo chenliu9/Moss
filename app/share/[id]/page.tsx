@@ -12,6 +12,7 @@ export interface SharePageProps {
 
 const defaultTitle = process.env.Metadata_Title || ''
 const defaultDesc = process.env.Metadata_Description || ''
+const metadataBaseUrl = process.env.Metadata_URL || ''
 
 export async function generateMetadata({ params }: SharePageProps) {
   const chat = await getSharedChat(params.id)
@@ -62,10 +63,10 @@ export default async function SharePage({ params }: SharePageProps) {
       }}
     >
       <WeixinShareWrapper
-        url={'https://demo.txz.tech/share/' + params.id}
+        url={metadataBaseUrl + '/share/' + params.id}
         title={chat?.title.toString().slice(0, 50) || defaultTitle}
         desc={description}
-        imgUrl={'https://demo.txz.tech/opengraph-image.png'}
+        imgUrl={`${metadataBaseUrl}/opengraph-image.png`}
       />
       <Chat id={params.id} />
     </AI>

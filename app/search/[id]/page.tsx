@@ -14,6 +14,7 @@ export interface SearchPageProps {
 
 const defaultTitle = process.env.Metadata_Title || ''
 const defaultDesc = process.env.Metadata_Description || ''
+const metadataBaseUrl = process.env.Metadata_URL || ''
 
 export async function generateMetadata({ params }: SearchPageProps) {
   const chat = await getChat(params.id, 'anonymous')
@@ -61,10 +62,10 @@ export default async function SearchPage({ params }: SearchPageProps) {
       }}
     >
       <WeixinShareWrapper
-        url={'https://demo.txz.tech/search/' + params.id}
+        url={metadataBaseUrl + '/search/' + params.id}
         title={chat?.title.toString().slice(0, 50) || defaultTitle}
         desc={answer?.content || defaultDesc}
-        imgUrl={'https://demo.txz.tech/opengraph-image.png'}
+        imgUrl={`${metadataBaseUrl}/opengraph-image.png`}
       />
       <Chat id={params.id} />
     </AI>

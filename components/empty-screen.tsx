@@ -54,7 +54,9 @@ export function EmptyScreen({
                 size={16}
                 className="mr-2 text-muted-foreground min-w-fit"
               />
-              <div className="text-left text-wrap">{message.heading}</div>
+              <div className="text-left text-wrap break-all">
+                {message.heading}
+              </div>
             </Button>
           ))}
         </div>

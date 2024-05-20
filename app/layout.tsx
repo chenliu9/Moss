@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: `/opengraph-image.png`, // Must be an absolute URL
+        url: `${metadataBaseUrl}/opengraph-image.png`, // Must be an absolute URL
         width: 512,
         height: 512,
         alt: 'InsightAI'

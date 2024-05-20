@@ -28,14 +28,6 @@ const exampleMessages = [
     heading: '总结：https://mp.weixin.qq.com/s/aikDRG4x08sI9Pg4tkyaZQ',
     message: '总结：https://mp.weixin.qq.com/s/aikDRG4x08sI9Pg4tkyaZQ'
   }
-  // {
-  //   heading: '小米汽车是否值得购买?',
-  //   message: '小米汽车是否值得购买?'
-  // },
-  // {
-  //   heading: '通用人工智能(AGI)有可能实现吗？',
-  //   message: '通用人工智能(AGI)有可能实现吗？'
-  // }
 ]
 export function EmptyScreen({
   submitMessage,

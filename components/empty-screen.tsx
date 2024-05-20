@@ -23,6 +23,10 @@ const exampleMessages = [
   {
     heading: '施工方超过国家规定标准排放噪声，是否应当承担责任?',
     message: '施工方超过国家规定标准排放噪声，是否应当承担责任?'
+  },
+  {
+    heading: '总结：https://mp.weixin.qq.com/s/aikDRG4x08sI9Pg4tkyaZQ',
+    message: '总结：https://mp.weixin.qq.com/s/aikDRG4x08sI9Pg4tkyaZQ'
   }
   // {
   //   heading: '小米汽车是否值得购买?',

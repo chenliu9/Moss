@@ -12,15 +12,14 @@ export interface SearchPageProps {
   }
 }
 
+const defaultTitle = process.env.Metadata_Title || ''
+const defaultDesc = process.env.Metadata_Description || ''
+
 export async function generateMetadata({ params }: SearchPageProps) {
   const chat = await getChat(params.id, 'anonymous')
-  const title =
-    chat?.title.toString().slice(0, 50) ||
-    'InsightAI - 数据驱动与AI赋能的分析决策'
+  const title = chat?.title.toString().slice(0, 50) || defaultTitle
   const answer = chat?.messages.find(message => message.type === 'answer')
-  const description =
-    answer?.content ||
-    '适用跨行业、跨领域的智能分析，赋能实时、动态、高维数据驱动的智能决策！'
+  const description = answer?.content || defaultDesc
   return {
     title,
     description,
@@ -45,9 +44,6 @@ export default async function SearchPage({ params }: SearchPageProps) {
   const userId = 'anonymous'
   const chat = await getChat(params.id, userId)
   const answer = chat?.messages.find(message => message.type === 'answer')
-  const description =
-    answer?.content ||
-    '适用跨行业、跨领域的智能分析，赋能实时、动态、高维数据驱动的智能决策！'
 
   if (!chat) {
     redirect('/')
@@ -66,10 +62,8 @@ export default async function SearchPage({ params }: SearchPageProps) {
     >
       <WeixinShareWrapper
         url={'https://demo.txz.tech/search/' + params.id}
-        title={
-          chat?.title.toString().slice(0, 50) || 'InsightAI - er of Data and AI'
-        }
-        desc={description}
+        title={chat?.title.toString().slice(0, 50) || defaultTitle}
+        desc={answer?.content || defaultDesc}
         imgUrl={'https://demo.txz.tech/opengraph-image.png'}
       />
       <Chat id={params.id} />

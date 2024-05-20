@@ -10,6 +10,9 @@ export interface SharePageProps {
   }
 }
 
+const defaultTitle = process.env.Metadata_Title || ''
+const defaultDesc = process.env.Metadata_Description || ''
+
 export async function generateMetadata({ params }: SharePageProps) {
   const chat = await getSharedChat(params.id)
 
@@ -17,14 +20,9 @@ export async function generateMetadata({ params }: SharePageProps) {
     return notFound()
   }
 
-  const title =
-    chat.title.toString().slice(0, 50) ||
-    'InsightAI - 数据驱动与AI赋能的分析决策'
-
+  const title = chat.title.toString().slice(0, 50) || defaultTitle
   const answer = chat?.messages.find(message => message.type === 'answer')
-  const description =
-    answer?.content ||
-    '适用跨行业、跨领域的智能分析，赋能实时、动态、高维数据驱动的智能决策！'
+  const description = answer?.content || defaultDesc
 
   return {
     title,
@@ -49,9 +47,7 @@ export async function generateMetadata({ params }: SharePageProps) {
 export default async function SharePage({ params }: SharePageProps) {
   const chat = await getSharedChat(params.id)
   const answer = chat?.messages.find(message => message.type === 'answer')
-  const description =
-    answer?.content ||
-    '适用跨行业、跨领域的智能分析，赋能实时、动态、高维数据驱动的智能决策！'
+  const description = answer?.content || defaultDesc
 
   if (!chat || !chat.sharePath) {
     notFound()
@@ -67,10 +63,7 @@ export default async function SharePage({ params }: SharePageProps) {
     >
       <WeixinShareWrapper
         url={'https://demo.txz.tech/share/' + params.id}
-        title={
-          chat?.title.toString().slice(0, 50) ||
-          'InsightAI - 数据驱动与AI赋能的分析决策'
-        }
+        title={chat?.title.toString().slice(0, 50) || defaultTitle}
         desc={description}
         imgUrl={'https://demo.txz.tech/opengraph-image.png'}
       />

@@ -8,29 +8,35 @@ import Footer from '@/components/footer'
 import { Sidebar } from '@/components/sidebar'
 import { Toaster } from '@/components/ui/sonner'
 import { AppStateProvider } from '@/lib/utils/app-state'
+import WeixinShareWrapper from '@/components/weixin-share-wrapper'
+import { Analytics } from '@vercel/analytics/react'
 
 const fontSans = FontSans({
   subsets: ['latin'],
   variable: '--font-sans'
 })
 
-const title = 'Morphic'
-const description =
-  'A fully open-source AI-powered answer engine with a generative UI.'
+const title = process.env.Metadata_Title || ''
+const description = process.env.Metadata_Description || ''
+const metadataBaseUrl = process.env.Metadata_URL || ''
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://morphic.sh'),
+  metadataBase: new URL(metadataBaseUrl),
   title,
   description,
   openGraph: {
     title,
-    description
-  },
-  twitter: {
-    title,
     description,
-    card: 'summary_large_image',
-    creator: '@miiura'
+    siteName: title,
+    type: 'website',
+    images: [
+      {
+        url: `${metadataBaseUrl}/opengraph-image.png`, // Must be an absolute URL
+        width: 512,
+        height: 512,
+        alt: 'InsightAI'
+      }
+    ]
   }
 }
 
@@ -49,6 +55,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn('font-sans antialiased', fontSans.variable)}>
+        <WeixinShareWrapper
+          url={metadataBaseUrl}
+          title={title}
+          desc={description}
+          imgUrl={`${metadataBaseUrl}/opengraph-image.png`}
+        />
+        <Analytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

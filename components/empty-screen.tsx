@@ -7,16 +7,26 @@ const exampleMessages = [
     message: 'What is Apple Intelligence?'
   },
   {
-    heading: 'Why is Nvidia growing rapidly?',
-    message: 'Why is Nvidia growing rapidly?'
+    heading: 'GPT-4o的特点包括哪些?',
+    message: 'GPT-4o的特点包括哪些?'
   },
   {
-    heading: 'How does the Vercel AI SDK work?',
-    message: 'How does the Vercel AI SDK work?'
+    heading: '国有企业转让资产，交易价款是否允许分期支付？',
+    message: '国有企业转让资产，交易价款是否允许分期支付？'
   },
   {
-    heading: 'Tesla vs Rivian',
-    message: 'Tesla vs Rivian'
+    heading: '总结：https://www.gov.cn/zhengce/2022-01/12/content_5718608.htm',
+    message: '总结：https://www.gov.cn/zhengce/2022-01/12/content_5718608.htm'
+  },
+  {
+    heading:
+      '如果一个邮政工作人员私自开拆了一个邮件，但只是为了查看其中的收件人地址，而并未泄露邮件内容，是否构成什么罪行？',
+    message:
+      '如果一个邮政工作人员私自开拆了一个邮件，但只是为了查看其中的收件人地址，而并未泄露邮件内容，是否构成什么罪行？'
+  },
+  {
+    heading: '施工方超过国家规定标准排放噪声，是否应当承担责任?',
+    message: '施工方超过国家规定标准排放噪声，是否应当承担责任?'
   }
 ]
 export function EmptyScreen({

@@ -3,6 +3,10 @@ import { ArrowRight } from 'lucide-react'
 
 const exampleMessages = [
   {
+    heading: 'What is Apple Intelligence?',
+    message: 'What is Apple Intelligence?'
+  },
+  {
     heading: 'GPT-4o的特点包括哪些?',
     message: 'GPT-4o的特点包括哪些?'
   },
